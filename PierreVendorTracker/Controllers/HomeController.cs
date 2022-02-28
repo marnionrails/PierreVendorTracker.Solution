@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Mvc;
 
-namespace PierreVenderTracker.Controllers
+namespace PierreVendorTracker.Controllers
 {
     public class HomeController : Controller
     {

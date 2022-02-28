@@ -1,7 +1,7 @@
 using System.IO;
 using Microsoft.AspNetCore.Hosting;
 
-namespace PierreVenderTracker
+namespace PierreVendorTracker
 {
   public class Program
   {
