@@ -47,5 +47,16 @@ namespace PierreVendorTracker.Tests
         string result = testOrder.Description;
         Assert.AreEqual(description, result);
       }
+      [TestMethod]
+      public void SetDescription_SetDescription_String()
+      {
+        string title = "Donut";
+        string description = "Chocolate with rainbow sprinkles";
+        string description2 = "White powder";
+        Order testOrder = new Order(title, description);
+        testOrder.Description = description2;
+        string result = testOrder.Description;
+        Assert.AreEqual(description2, result);
+      }
   }
 }
