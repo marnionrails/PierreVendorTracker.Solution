@@ -68,5 +68,16 @@ namespace PierreVendorTracker.Tests
         double result = testOrder.Price;
         Assert.AreEqual(price, result);
       }
+      [TestMethod]
+      public void SetPrice_SetPrice_Double()
+      {
+        string title = "Donut";
+        string description = "Chocolate with rainbow sprinkles";
+        double price = 1.99;
+        Order testOrder = new Order(title, description, price);
+        double changedPrice = 2.99;
+        double result = testOrder.Price;
+        Assert.AreEqual(price, result);
+      }
   }
 }
