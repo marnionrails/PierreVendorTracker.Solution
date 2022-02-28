@@ -11,14 +11,14 @@ namespace PierreVendorTracker.Tests
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
-      Order testOrder = new Order("test", "test2");
+      Order testOrder = new Order("test", "test2", 1.99);
       Assert.AreEqual(typeof(Order), testOrder.GetType());
     }
      [TestMethod]
       public void GetTitle_ReturnsTitle_String()
     {
       string title = "Donut";
-      Order testOrder = new Order(title, "test2");
+      Order testOrder = new Order(title, "test2", 1.99);
 
       string result = testOrder.Title;
 
@@ -31,7 +31,7 @@ namespace PierreVendorTracker.Tests
         string title2 = "Bagel";
         string description = "example";
 
-        Order testOrder = new Order(title, description);
+        Order testOrder = new Order(title, description, 1.99);
         testOrder.Title = title2;
 
         string result = testOrder.Title;
@@ -43,7 +43,7 @@ namespace PierreVendorTracker.Tests
       {
         string title = "Donut";
         string description = "Chocolate with rainbow sprinkles";
-        Order testOrder = new Order(title, description);
+        Order testOrder = new Order(title, description, 1.99);
         string result = testOrder.Description;
         Assert.AreEqual(description, result);
       }
@@ -53,10 +53,20 @@ namespace PierreVendorTracker.Tests
         string title = "Donut";
         string description = "Chocolate with rainbow sprinkles";
         string description2 = "White powder";
-        Order testOrder = new Order(title, description);
+        Order testOrder = new Order(title, description, 1.99);
         testOrder.Description = description2;
         string result = testOrder.Description;
         Assert.AreEqual(description2, result);
+      }
+      [TestMethod]
+      public void GetPrice_GetPrice_Double()
+      {
+        string title = "Donut";
+        string description = "Chocolate with rainbow sprinkles";
+        double price = 1.99;
+        Order testOrder = new Order(title, description, price);
+        double result = testOrder.Price;
+        Assert.AreEqual(price, result);
       }
   }
 }
