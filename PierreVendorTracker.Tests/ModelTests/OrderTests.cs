@@ -24,5 +24,18 @@ namespace PierreVendorTracker.Tests
 
       Assert.AreEqual(title, result);
     }
+      [TestMethod]
+      public void SetTitle_SetTitle_String()
+      {
+        string title = "Donut";
+        string title2 = "Bagel";
+
+        Order testOrder = new Order(title);
+        testOrder.Title = title2;
+
+        string result = testOrder.Title;
+
+        Assert.AreEqual(title2, result);
+      }
   }
 }
