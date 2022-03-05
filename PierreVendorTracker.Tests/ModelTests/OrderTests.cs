@@ -12,7 +12,7 @@ namespace PierreVendorTracker.Tests
     {
       Order.ClearAll();
     }
-    
+
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -92,13 +92,22 @@ namespace PierreVendorTracker.Tests
         Assert.AreEqual(testNow, testOrder.orderTime);
       }
       [TestMethod]
-      public void GetOrderById_GetOrderById_Order()
+      public void GetOrderId_GetOrderId_Int()
       {
         Order order1 = new Order("Donut", "Chocolate with rainbow sprinkles", 2.99);
         Order order2 = new Order("Pie", "Apple", 1.99);
         int order2Id = 2;
         int result = order2.Id;
         Assert.AreEqual(order2Id, result);
+      }
+      [TestMethod]
+      public void GetAll_ReturnsAllOrderObject_OrderList()
+      {
+        Order order1 = new Order("Donut", "Chocolate with rainbow sprinkles", 2.99);
+        Order order2 = new Order("Pie", "Apple", 1.99);
+        List<Order> testList = new List<Order> { order1, order2 };
+        List<Order> result = Order.GetAll();
+        CollectionAssert.AreEqual(testList, result);
       }
   }
 }
