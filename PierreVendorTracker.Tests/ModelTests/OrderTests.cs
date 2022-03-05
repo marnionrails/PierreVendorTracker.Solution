@@ -6,8 +6,13 @@ using PierreVendorTracker.Models;
 namespace PierreVendorTracker.Tests 
 {
   [TestClass]
-  public class OrderTests
+  public class OrderTests : IDisposable
   {
+    public void Dispose()
+    {
+      Order.ClearAll();
+    }
+    
     [TestMethod]
     public void OrderConstructor_CreatesInstanceOfOrder_Order()
     {
@@ -85,6 +90,15 @@ namespace PierreVendorTracker.Tests
         DateTime testNow = DateTime.Now;
         Order testOrder = new Order("Donut", "Chocolate with rainbow sprinkles", 2.99);
         Assert.AreEqual(testNow, testOrder.orderTime);
+      }
+      [TestMethod]
+      public void GetOrderById_GetOrderById_Order()
+      {
+        Order order1 = new Order("Donut", "Chocolate with rainbow sprinkles", 2.99);
+        Order order2 = new Order("Pie", "Apple", 1.99);
+        int order2Id = 2;
+        int result = order2.Id;
+        Assert.AreEqual(order2Id, result);
       }
   }
 }
