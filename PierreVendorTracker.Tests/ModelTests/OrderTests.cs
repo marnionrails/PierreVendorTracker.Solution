@@ -75,9 +75,9 @@ namespace PierreVendorTracker.Tests
         string description = "Chocolate with rainbow sprinkles";
         double price = 1.99;
         Order testOrder = new Order(title, description, price);
-        double changedPrice = 2.99;
+        testOrder.Price = 2.99;
         double result = testOrder.Price;
-        Assert.AreEqual(price, result);
+        Assert.AreEqual(testOrder.Price, result);
       }
       [TestMethod]
       public void GetDateTime_GetDateTime_DateTime()

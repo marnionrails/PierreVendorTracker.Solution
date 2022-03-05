@@ -13,8 +13,16 @@ namespace PierreVendorTracker.Tests
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
-      Vendor testVendor = new Vendor();
+      Vendor testVendor = new Vendor("testVendor");
       Assert.AreEqual(typeof(Vendor), testVendor.GetType());
+    }
+    [TestMethod]
+    public void GetVendorName_ReturnsVendorName_String()
+    {
+      string name = "Emily's Cafe";
+      Vendor testVendor = new Vendor(name);
+      string result = testVendor.Name;
+      Assert.AreEqual(name, result);
     }
    
   }
