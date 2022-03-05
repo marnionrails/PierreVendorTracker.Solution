@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 
 namespace PierreVendorTracker.Models
@@ -9,11 +10,14 @@ namespace PierreVendorTracker.Models
 
     public double Price { get; set; }
 
+    public DateTime orderTime { get; set; }
+
     public Order(string title, string description, double price)
     {
       Title = title;
       Description = description;
       Price = price;
+      orderTime = DateTime.Now;
     }
   }
 

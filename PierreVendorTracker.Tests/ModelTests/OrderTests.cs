@@ -79,5 +79,12 @@ namespace PierreVendorTracker.Tests
         double result = testOrder.Price;
         Assert.AreEqual(price, result);
       }
+      [TestMethod]
+      public void GetDateTime_GetDateTime_DateTime()
+      {
+        DateTime testNow = DateTime.Now;
+        Order testOrder = new Order("Donut", "Chocolate with rainbow sprinkles", 2.99);
+        Assert.AreEqual(testNow, testOrder.orderTime);
+      }
   }
 }
