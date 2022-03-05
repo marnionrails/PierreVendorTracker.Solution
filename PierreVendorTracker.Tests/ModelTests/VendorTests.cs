@@ -6,10 +6,13 @@ using System;
 namespace PierreVendorTracker.Tests
 {
   [TestClass]
-  public class VendorTests
-  {     
+  public class VendorTests : IDisposable
+  {
+    public void Dispose()  
+    {
+      Vendor.ClearAll();
+    }   
     
-
     [TestMethod]
     public void VendorConstructor_CreatesInstanceOfVendor_Vendor()
     {
@@ -23,6 +26,14 @@ namespace PierreVendorTracker.Tests
       Vendor testVendor = new Vendor(name);
       string result = testVendor.Name;
       Assert.AreEqual(name, result);
+    }
+    [TestMethod]
+    public void GetVendorId_ReturnsVendorId_Int()
+    {
+      string name = "Emily's Cafe";
+      Vendor testVendor = new Vendor(name);
+      int result = testVendor.Id;
+      Assert.AreEqual(1, result);
     }
    
   }
