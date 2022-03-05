@@ -109,5 +109,13 @@ namespace PierreVendorTracker.Tests
         List<Order> result = Order.GetAll();
         CollectionAssert.AreEqual(testList, result);
       }
+      [TestMethod]
+      public void Find_ReturnsCorrectOrder_Order()
+      {
+        Order order1 = new Order("Donut", "Chocolate with rainbow sprinkles", 2.99);
+        Order order2 = new Order("Pie", "Apple", 1.99);
+        Order result = Order.Find(2);
+        Assert.AreEqual(order2, result);
+      }
   }
 }
